@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Library.controllers;
+using Library.mapping;
+using Library.repository;
+using Library.services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +20,13 @@ namespace Library
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            RepoAccount repoAccount = new RepoAccount();
+            ServiceAccount serviceAccount = new ServiceAccount(repoAccount);
+            Controller controller = new Controller(serviceAccount);
+            MainLibrary mainLibrary = new MainLibrary(controller);
+
+            Application.Run(mainLibrary);
         }
     }
 }

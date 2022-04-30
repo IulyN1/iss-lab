@@ -12,7 +12,7 @@ namespace Library.mapping
     {
         public AccountMap()
         {
-            Id(x => x.id);
+            Id(x => x.id).GeneratedBy.Increment();
             Map(x => x.username);
             Map(x => x.password);
             Map(x => x.admin);

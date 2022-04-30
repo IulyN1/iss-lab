@@ -1,5 +1,6 @@
 ﻿using Library.model;
 using Library.repository;
+using Library.validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,15 +12,18 @@ namespace Library.services
     public class ServiceAccount
     {
         private RepoAccount repoAccount;
+        private ValidatorAccount validAccount;
 
-        public ServiceAccount(RepoAccount repoAccount)
+        public ServiceAccount(RepoAccount repoAccount, ValidatorAccount validAccount)
         {
             this.repoAccount = repoAccount;
+            this.validAccount = validAccount;
         }
 
         public void addAccount(String username, String password)
         {
             Account account = new Account(username, password);
+            validAccount.validate(account);
             repoAccount.addAccount(account);
         }
 

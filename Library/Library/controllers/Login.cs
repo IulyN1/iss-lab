@@ -36,7 +36,7 @@ namespace Library.controllers
                 }
                 else
                 {
-                    var frm = new Terminal(controller);
+                    var frm = new Terminal(controller, account);
                     frm.Show();
                     this.Hide();
                 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,11 +14,13 @@ namespace Library.controllers
     public partial class Terminal : Form
     {
         private Controller controller;
-
-        public Terminal(Controller controller)
+        private Account account;
+        public Terminal(Controller controller, Account account)
         {
             InitializeComponent();
             this.controller = controller;
+            this.account = account;
+
             comboBoxTerminal.Items.Clear();
             comboBoxTerminal.Items.Add("Borrow books");
             comboBoxTerminal.Items.Add("Return books");
@@ -27,13 +30,13 @@ namespace Library.controllers
         {
             if(comboBoxTerminal.SelectedItem.ToString() == "Borrow books")
             {
-                var frm = new Dashboard(controller);
+                var frm = new Dashboard(controller, account);
                 frm.Show();
                 this.Hide();
             }
             else if (comboBoxTerminal.SelectedItem.ToString() == "Return books")
             {
-                var frm = new Returnal(controller);
+                var frm = new Returnal(controller, account);
                 frm.Show();
                 this.Hide();
             }

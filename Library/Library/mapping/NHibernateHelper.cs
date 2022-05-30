@@ -40,7 +40,8 @@ namespace Library.mapping
             .Password("postgres")))
 
          .Mappings(m => m.FluentMappings
-         .AddFromAssemblyOf<RepoAccount>())
+         .AddFromAssemblyOf<RepoAccount>().AddFromAssemblyOf<RepoSubscriber>().AddFromAssemblyOf<RepoBook>()
+         .AddFromAssemblyOf<RepoLending>())
          .ExposeConfiguration(cfg => new SchemaExport(cfg))
          .BuildSessionFactory();
         }

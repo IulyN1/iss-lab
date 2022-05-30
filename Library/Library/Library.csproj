@@ -156,18 +156,28 @@
       <DependentUpon>Terminal.cs</DependentUpon>
     </Compile>
     <Compile Include="mapping\AccountMap.cs" />
+    <Compile Include="mapping\BookMap.cs" />
+    <Compile Include="mapping\LendingMap.cs" />
     <Compile Include="mapping\NHibernateHelper.cs" />
     <Compile Include="mapping\SubscriberMap.cs" />
     <Compile Include="model\Account.cs" />
+    <Compile Include="model\Book.cs" />
+    <Compile Include="model\Lending.cs" />
     <Compile Include="model\Subscriber.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="repository\RepoAccount.cs" />
+    <Compile Include="repository\RepoBook.cs" />
+    <Compile Include="repository\RepoLending.cs" />
     <Compile Include="repository\RepoSubscriber.cs" />
     <Compile Include="services\ServiceAccount.cs" />
+    <Compile Include="services\ServiceBook.cs" />
+    <Compile Include="services\ServiceLending.cs" />
     <Compile Include="services\ServiceSubscriber.cs" />
     <Compile Include="validators\IValidator.cs" />
     <Compile Include="validators\ValidatorAccount.cs" />
+    <Compile Include="validators\ValidatorBook.cs" />
+    <Compile Include="validators\ValidatorLending.cs" />
     <Compile Include="validators\ValidatorSubscriber.cs" />
     <EmbeddedResource Include="controllers\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
